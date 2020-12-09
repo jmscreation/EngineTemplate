@@ -4,36 +4,30 @@
 	<Project>
 		<Option title="Engine" />
 		<Option pch_mode="2" />
-		<Option compiler="gnu_gcc_920_compiler" />
+		<Option compiler="gnu_gcc_1020_compiler" />
 		<Build>
 			<Target title="Game Release">
 				<Option platforms="Windows;" />
 				<Option output="game" prefix_auto="1" extension_auto="1" />
 				<Option type="0" />
-				<Option compiler="gnu_gcc_920_compiler" />
+				<Option compiler="gnu_gcc_1020_compiler" />
 				<Option projectLinkerOptionsRelation="2" />
-				<Compiler>
-					<Add directory="./library/SFML-2.5.1_920/include" />
-				</Compiler>
 				<Linker>
 					<Add library="libengine-s.a" />
 					<Add library="libportaudio-s.a" />
-					<Add directory="./library/SFML-2.5.1_920/lib" />
+					<Add directory="library/SFML-2.5.1/lib" />
 				</Linker>
 			</Target>
 			<Target title="Game Debug">
 				<Option platforms="Windows;" />
 				<Option output="game-debug" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
-				<Option compiler="gnu_gcc_920_compiler" />
+				<Option compiler="gnu_gcc_1020_compiler" />
 				<Option projectLinkerOptionsRelation="2" />
-				<Compiler>
-					<Add directory="./library/SFML-2.5.1_920/include" />
-				</Compiler>
 				<Linker>
 					<Add library="libengine-s.a" />
 					<Add library="libportaudio-s.a" />
-					<Add directory="./library/SFML-2.5.1_920/lib" />
+					<Add directory="library/SFML-2.5.1/lib" />
 				</Linker>
 			</Target>
 			<Target title="Game Release 64bit">
@@ -41,17 +35,12 @@
 				<Option output="game64" prefix_auto="1" extension_auto="1" />
 				<Option object_output=".objs64" />
 				<Option type="0" />
-				<Option compiler="gnu_gcc_920_64bit_compiler" />
+				<Option compiler="gnu_gcc_1020_64bit_compiler" />
 				<Option projectLinkerOptionsRelation="2" />
-				<Compiler>
-					<Add option="-m64" />
-					<Add directory="./library/SFML-2.5.1-64_920/include" />
-				</Compiler>
 				<Linker>
-					<Add option="-m64" />
 					<Add library="libengine64-s.a" />
 					<Add library="libportaudio64-s.a" />
-					<Add directory="./library/SFML-2.5.1-64_920/lib" />
+					<Add directory="library/SFML-2.5.1/lib64" />
 				</Linker>
 			</Target>
 			<Target title="Game Debug 64bit">
@@ -59,26 +48,22 @@
 				<Option output="game-debug64" prefix_auto="1" extension_auto="1" />
 				<Option object_output=".objs64" />
 				<Option type="1" />
-				<Option compiler="gnu_gcc_920_64bit_compiler" />
+				<Option compiler="gnu_gcc_1020_64bit_compiler" />
 				<Option projectLinkerOptionsRelation="2" />
-				<Compiler>
-					<Add option="-m64" />
-					<Add directory="./library/SFML-2.5.1-64_920/include" />
-				</Compiler>
 				<Linker>
-					<Add option="-m64" />
 					<Add library="libengine64-s.a" />
 					<Add library="libportaudio64-s.a" />
-					<Add directory="./library/SFML-2.5.1-64_920/lib" />
+					<Add directory="library/SFML-2.5.1/lib64" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++17" />
+			<Add option="-std=c++20" />
 			<Add option="-DSFML_STATIC" />
-			<Add directory="./library/engine" />
-			<Add directory="./game" />
-			<Add directory="./library" />
+			<Add directory="game" />
+			<Add directory="library" />
+			<Add directory="library/engine" />
+			<Add directory="library/SFML-2.5.1/include" />
 		</Compiler>
 		<Linker>
 			<Add option="-s" />
@@ -90,13 +75,14 @@
 			<Add library="sfml-window-s" />
 			<Add library="sfml-system-s" />
 			<Add library="sfml-network-s" />
+			<Add library="uuid" />
 			<Add library="winmm" />
 			<Add library="opengl32" />
 			<Add library="gdi32" />
 			<Add library="freetype" />
 			<Add library="ws2_32" />
 			<Add library="comdlg32" />
-			<Add directory="./library" />
+			<Add directory="library" />
 		</Linker>
 		<Unit filename="defines.h" />
 		<Unit filename="game/game.cpp" />
