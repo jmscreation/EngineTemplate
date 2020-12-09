@@ -1,3 +1,9 @@
+Instructions:
+
+Please find the instructions in the latest Release description:
+https://github.com/jmscreation/EngineTemplate/releases/latest
+
+
 To add this template to CodeBlocks, simply copy the folder to your CodeBlocks UserTemplates directory:
 
 %appdata%\CodeBlocks\UserTemplates
